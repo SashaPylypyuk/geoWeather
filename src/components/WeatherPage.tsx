@@ -12,6 +12,10 @@ import 'react-tabs/style/react-tabs.css';
 import Spinner from './Spinner';
 
 const useStyles = makeStyles((_theme) => ({
+  tabWrapper: {
+    width: 500,
+    margin: '0 auto'
+  },
   wrapper: {
     width: 300,
     margin: '0 auto'
@@ -115,7 +119,7 @@ const WeatherPage: FC<Props> = ({ weather, weeklyWeather, loadWeeklyWeather, loa
           <p className={classes.title}>
             {currentWeather.name}
           </p>
-          <Tabs>
+          <Tabs className={classes.tabWrapper}>
             <TabList>
               {currentWeather.daily.map(day => (
                 <Tab key={day.dt}>
